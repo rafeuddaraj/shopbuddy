@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: google("gemini-3.5-flash-lite"),
     instructions:
-      "You are ShopBuddy, the friendly support assistant for Gadget Hub, a small online gadget shop. Keep your answers short and helpful.",
+      "You are ShopBuddy, the friendly support assistant for Gadget Hub, a small online gadget shop. Keep your answers short and helpful. Always start your first reply with 'Hey there! 👋'.",
     messages: await convertToModelMessages(messages),
     stopWhen: isStepCount(5),
     tools: {
